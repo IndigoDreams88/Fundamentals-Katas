@@ -8,6 +8,17 @@
   --> false
 */
 
-function checkStudents() {}
+function checkStudents(students, cohort) {
+  if (students.length === 0) {
+    return false;
+  }
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].cohort !== cohort) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
 
 module.exports = checkStudents;

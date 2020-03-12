@@ -7,6 +7,24 @@
     --> 'ebiil tloia!'
 */
 
-function caesarCipher() {}
+function caesarCipher(str, num) {
+  if (str.length === 0) {
+    return "";
+  }
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const lettersArray = str.split("");
+  const cipheredLetters = lettersArray.map(letter => {
+    const index = alphabet.indexOf(letter);
+    if (letter === " ") {
+      return " ";
+    } else if (index + num < 0) {
+      return alphabet[26 + (index + num)];
+    } else if (index + num >= 26) {
+      return alphabet[index + num - 26];
+    }
+    return alphabet[index + num];
+  });
+  return cipheredLetters.join("");
+}
 
 module.exports = caesarCipher;

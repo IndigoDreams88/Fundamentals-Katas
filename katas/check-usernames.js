@@ -6,6 +6,18 @@
   - is no longer than 20 characters
 */
 
-function checkUsernames() {}
+function checkUsernames(usernames) {
+  const regex = /^[_a-z\d]{5,20}$/;
+  if (usernames.length === 0) {
+    return false;
+  }
+  for (let i = 0; i < usernames.length; i++) {
+    if (regex.test(usernames[i])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 module.exports = checkUsernames;

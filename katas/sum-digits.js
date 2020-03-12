@@ -7,6 +7,22 @@
     --> 6
 */
 
-function sumDigits() {}
+function sumDigits(number) {
+  const digitsToSum = [];
+  const numberToStr = number.toString();
+  if (numberToStr.length === 1) {
+    return number;
+  } else {
+    for (let i = 0; i < numberToStr.length; i += 1) {
+      if (numberToStr.charAt(i) !== ".") {
+        digitsToSum.push(+numberToStr.charAt(i));
+      }
+    }
+    const summedDigits = digitsToSum.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    });
+    return summedDigits;
+  }
+}
 
 module.exports = sumDigits;

@@ -12,6 +12,17 @@
   }
 */
 
-function getFrequencies() {}
+function getFrequencies(str) {
+  const charFrequency = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in charFrequency === false) {
+      charFrequency[str[i]] = 1;
+    } else {
+      charFrequency[str[i]] = charFrequency[str[i]] + 1;
+    }
+  }
+
+  return charFrequency;
+}
 
 module.exports = getFrequencies;

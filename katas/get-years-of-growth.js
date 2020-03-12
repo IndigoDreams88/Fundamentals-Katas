@@ -6,6 +6,19 @@
   --> 25
 */
 
-function getYearsOfGrowth() {}
+function getYearsOfGrowth(
+  startPopulation,
+  endPopulation,
+  growthPercentage,
+  netMigration
+) {
+  let count = 0;
+  while (startPopulation < endPopulation) {
+    startPopulation +=
+      (startPopulation * growthPercentage) / 100 + netMigration;
+    count++;
+  }
+  return count;
+}
 
 module.exports = getYearsOfGrowth;
