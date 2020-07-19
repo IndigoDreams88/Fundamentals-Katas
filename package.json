@@ -18,5 +18,8 @@
     "hooks": {
       "pre-commit": "npm test"
     }
+  },
+  "dependencies": {
+    "lodash": "^4.17.19"
   }
 }
